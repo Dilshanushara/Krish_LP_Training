@@ -7,7 +7,7 @@ public class WatchRegistry {
     private Map<WatchType, Watch> Watches = new HashMap<>();
 
     public WatchRegistry() {
-        this.initializingTours();
+        this.initialize();
     }
 
     public Watch getWatch(WatchType type){
@@ -21,7 +21,7 @@ public class WatchRegistry {
         return tours;
     }
 
-    private void initializingTours(){
+    private void initialize(){
 
         Analog analogwatch =new Analog();
         analogwatch.setModel("Casio 45");
