@@ -59,17 +59,7 @@ let lettersmap = new Map([
     ['X', 24],
     ['Y', 25],
     ['Z', 26],
-    ['0',0],
-    ['1',0],
-    ['2',0],
-    ['3',0],
-    ['4',0],
-    ['5',0],
-    ['6',0],
-    ['7',0],
-    ['8',0],
-    ['9',0],    
-
+      
 ]);
 
 //calculate value for words
@@ -124,8 +114,11 @@ for(var i=0;i<inputarray.length;i++){
     { 
         //get a one letter
         var oneletter = word.charAt(x);
-        //calculate the value per one letter
-        valueforoneword=valueforoneword+lettersmap.get(oneletter);     
+
+        if(lettersmap.has(oneletter)){
+            //calculate the value per one letter
+            valueforoneword=valueforoneword+lettersmap.get(oneletter);    
+        }              
     }
 
     //added values to unsorted array
