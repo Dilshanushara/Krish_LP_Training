@@ -17,7 +17,7 @@ public class AuthServerConfigurations extends WebSecurityConfigurerAdapter imple
 
 
     @Bean
-    protected AuthenticationManager authenticationManager() throws Exception {
+    protected AuthenticationManager getauthenticationManager() throws Exception {
         return super.authenticationManagerBean();
     }
 
@@ -34,7 +34,7 @@ public class AuthServerConfigurations extends WebSecurityConfigurerAdapter imple
 
     @Override
     public void configure(ClientDetailsServiceConfigurer client) throws Exception {
-        client.inMemory().withClient("web").secret("webpass")
+        client.inMemory().withClient("web").secret(passwordEncoder.encode("webpass"))
                 .scopes("READ", "WRITE").authorizedGrantTypes("password", "authorization_code");
 
     }
