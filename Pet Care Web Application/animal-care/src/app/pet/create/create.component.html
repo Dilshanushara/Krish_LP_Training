@@ -1,0 +1,54 @@
+<!-- <form action="./ownerlist"  style="border:1px solid #ccc" width="70%" > -->
+  <form (ngSubmit)="onSubmit(f)" #f ="ngForm" style="border:1px solid #ccc" width="70%" >
+  <div class="container">
+      <br>
+  <h1>Register New Pet</h1><br>
+   <h4><p>Please fill this form.</p></h4> 
+    <hr>
+
+    <label class="label" for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Pet's Name"  ngModel name= "PetName" >
+
+
+    <label class="label" for="age"><b>Age</b></label>
+    <input type="number" placeholder="Enter Age"  ngModel name= "Age" >
+  
+  
+    <!-- <label class="label" for="email"><b>Gender</b></label>
+    <input type="text" placeholder="" ngModel name= "Gender" required> -->
+    <label class="label" for="Gender"><b>Gender</b></label>
+    <br>
+    <!-- <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+    <br><br>
+    
+    <label class="btn btn-outline-primary" for="btnradio1">Male</label>
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btnradio2">Female</label> -->
+
+    <!-- <label class="label">Male
+      <input type="radio" checked="checked" name="radio">
+      <span class="checkmark"></span>
+    </label>
+    <label class="label">Female
+      <input type="radio" name="radio">
+      <span class="checkmark"></span>
+    </label> -->
+    <input type="radio" value="Male" name="gender" ngModel name= "Gender" required #Gender="ngModel"> Male
+    <input type="radio" value="Female" name="gender" ngModel name= "Gender" required #Gender="ngModel"> Female
+    <div *ngIf="Gender.invalid" [ngClass] = "'error'"> 
+    
+   </div>
+
+    
+  <br><br>
+    <div class="clearfix">
+          <button type="button"  class="cancelbtn">Cancel</button> 
+      
+          <button type="submit" class="savebtn ">Save</button>
+
+      <!-- <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button> -->
+
+    </div>
+  </div>
+</form> 

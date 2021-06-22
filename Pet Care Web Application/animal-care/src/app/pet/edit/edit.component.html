@@ -1,0 +1,38 @@
+<!-- <form action="./ownerlist"  style="border:1px solid #ccc" width="70%" > -->
+  <form (ngSubmit)="onSubmit(f)" #f ="ngForm" style="border:1px solid #ccc" width="70%" >
+    <div class="container">
+        <br>
+    <h1>Edit Pet Detais</h1><br>
+      <hr>
+  
+      <label class="label" for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Pet's Name"  [ngModel]="pet.PetName" name= "PetName" >
+  
+  
+      <label class="label" for="age"><b>Age</b></label>
+      <input type="number" placeholder="Enter Age"  [ngModel]="pet.Age" name= "Age" >
+    
+    
+      <!-- <label class="label" for="email"><b>Gender</b></label>
+      <input type="text" placeholder="" ngModel name= "Gender" required> -->
+      <label class="label" for="Gender"><b>Gender</b></label>
+      <br>
+      <input type="radio" value="Male" name="gender" [ngModel]="pet.Gender" name= "Gender" > Male
+      <input type="radio" value="Female" name="gender" [ngModel]="pet.Gender" name= "Gender" > Female
+ 
+      
+
+  
+      
+    <br><br>
+      <div class="clearfix">
+            <button type="button"  class="cancelbtn">Cancel</button> 
+        
+            <button type="submit" class="savebtn " routerLink="/petlist">Save</button>
+  
+        <!-- <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button> -->
+  
+      </div>
+    </div>
+  </form> 

@@ -1,0 +1,33 @@
+<!-- <form action="./ownerlist"  style="border:1px solid #ccc" width="70%" > -->
+  <form (ngSubmit)="onSubmit(f)" #f ="ngForm" style="border:1px solid #ccc" width="70%" >
+  <div class="container">
+      <br>
+  <h1>Edit The Owner</h1><br>
+    <hr>
+
+    <label class="label" for="name"><b>FirstName</b></label>
+    <input type="text" [ngModel]="owner.FirstName" name= "FirstName" >
+
+
+    <label class="label" for="age"><b>LastName</b></label>
+    <input type="text" [ngModel]="owner.LastName" name= "LastName" >
+  
+  
+    <label class="label" for="email"><b>Email</b></label>
+    <input type="email"  [ngModel] ="owner.email" name= "email">
+
+    <label class="label" for="phone"><b>Mobile</b></label>
+    <input type="number" [ngModel]="owner.phone" name= "phone">
+    
+  <br><br>
+    <div class="clearfix">
+          <button type="button"  class="cancelbtn">Cancel</button> 
+      
+          <button type="submit" class="savebtn ">Save</button>
+
+      <!-- <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button> -->
+
+    </div>
+  </div>
+</form> 
