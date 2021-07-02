@@ -1,5 +1,7 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import { Document} from "mongoose";
+import { Document, Mongoose} from "mongoose";
+import { Owner } from "src/owner/schema/Owner.schema";
+import * as mongoose from 'mongoose'
 
 
 export type PetDocuemnt= Pet & Document;
@@ -15,6 +17,8 @@ export class Pet{
     Age:number;
     @Prop()
     Gender:string;
+    @Prop({type:mongoose.Schema.Types.ObjectId, ref: 'Owner'})
+    OwnerId:Owner;
 
 }
 

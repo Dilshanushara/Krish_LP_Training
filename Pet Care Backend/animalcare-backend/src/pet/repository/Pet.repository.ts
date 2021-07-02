@@ -28,7 +28,7 @@ constructor(@InjectModel(Pet.name)private PetModel:Model<PetDocuemnt>){}
     }
 
     async Update(id:string,petupdatedto:PetUpdateDto):Promise<Pet>{
-        return await this.PetModel.findByIdAndUpdate(id,petupdatedto);
+        return await this.PetModel.findByIdAndUpdate(id,petupdatedto,{new:true});
 
     }
 
